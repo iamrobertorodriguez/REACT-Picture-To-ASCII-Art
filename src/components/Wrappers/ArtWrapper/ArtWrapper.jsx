@@ -1,9 +1,11 @@
 import { useState } from "react";
+import ASCIIAnimation from "./ASCIIAnimation";
 
 const ArtWrapper = ({art, handleExit}) => {
 
   const [artColor, setArtColor] = useState('#01FDC8')
   const [copyState, setCopyState] = useState('NOT_TRIED')
+  const [skipAnimation, setSkipAnimation] = useState(false)
 
   const colorList = [
     "#01FDC8",   // Default
@@ -27,11 +29,7 @@ const ArtWrapper = ({art, handleExit}) => {
   return (
     <div id="art-wrapper">
 
-      <pre 
-        style={{fontSize: '.7vw', color: artColor, marginBottom: '64px'}}
-      >
-        {art.ascii_art}
-      </pre>
+      <ASCIIAnimation asciiArt={art.ascii_art} color={artColor} skip={skipAnimation} autoSkip={() => setSkipAnimation(true)}/>
 
       <div id="color-picker">
         {
@@ -51,6 +49,13 @@ const ArtWrapper = ({art, handleExit}) => {
           })
         }
       </div>
+
+      {
+        !skipAnimation &&
+        <button onClick={() => setSkipAnimation(true)}>
+          Skip typing animation
+        </button>
+      }
 
       <button
         style={copyState === 'ERROR' ? {borderColor: 'red', color: 'red'} : {}}
