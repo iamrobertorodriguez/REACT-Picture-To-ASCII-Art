@@ -1,0 +1,38 @@
+#upload-image-form {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+}
+
+#upload-image-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+#art-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#color-picker {
+  border: 1px solid #01fdc8;
+  height: 50px;
+  min-width: 300px;
+  display: flex;
+  padding: 4px;
+}
+
+#color-picker > div {
+  cursor: pointer;
+  height: 100%;
+  width: 30px;
+}
+
+.red-content {
+  border: 1px solid red;
+  color: red;
+}
