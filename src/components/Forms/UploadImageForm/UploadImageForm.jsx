@@ -81,6 +81,7 @@ const UploadImageForm = ({handleResult}) => {
           <option value="lg">Large</option>
           <option value="xl">Very Large</option>
         </select>
+        <label>This may also increase the details clarity.</label>
       </div>
       {
         imageFile &&
