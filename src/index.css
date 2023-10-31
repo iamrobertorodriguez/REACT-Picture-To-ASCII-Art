@@ -97,6 +97,10 @@ input[type="file"]::after {
   border: 1px solid #01fdc8;
 }
 
+label {
+  text-align: center;
+}
+
 button {
   border: 1px solid #01fdc8;
   cursor: pointer;
